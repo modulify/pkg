@@ -1,0 +1,35 @@
+{
+  "name": "@modulify/pkg",
+  "type": "module",
+  "license": "ISC",
+  "version": "0.0.0",
+  "description": "Tools for working with packages",
+  "author": "zaytsev.modulify@gmail.com",
+  "contributors": [
+    "Zaitsev Kirill <zaytsev.cmath10@gmail.com>"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "files": [
+    "dist",
+    "types",
+    "README.md"
+  ],
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "detect-indent": "^7.0.1",
+    "detect-newline": "^4.0.1",
+    "figures": "^6.1.0",
+    "glob": "^11.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@types/node": "^20.17.11",
+    "typescript": "~5.5.4",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  },
+  "packageManager": "yarn@4.6.0"
+}
