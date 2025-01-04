@@ -4,20 +4,86 @@ import { join } from 'node:path'
 import { read } from '@/read'
 
 describe('read.ts', () => {
-  it('reads root workspace', () => {
-    const path = join(__dirname, 'fixtures', 'project1')
+  it('reads worktree where workspaces defined by exact names', () => {
+    const path = join(__dirname, 'fixtures', 'worktree-exact')
 
-    expect(read(path)).toEqual(expect.objectContaining({
-      name: 'project1',
+    const worktree = read(path)
+
+    expect(worktree).toEqual(expect.objectContaining({
+      name: 'worktree-exact',
       path,
       manifest: {
-        name: 'project1',
+        name: 'worktree-exact',
         workspaces: ['workspace-a', 'workspace-b'],
       },
+      level: 0,
+      parent: null,
       children: [
-        expect.objectContaining({ name: 'workspace-a' }),
-        expect.objectContaining({ name: 'workspace-b' }),
+        expect.objectContaining({ name: 'workspace-a', level: 1, parent: worktree }),
+        expect.objectContaining({ name: 'workspace-b', level: 1, parent: worktree }),
       ],
     }))
+  })
+
+  it('reads worktree where workspaces defined by wildcard', () => {
+    const path = join(__dirname, 'fixtures', 'worktree-wildcard')
+
+    const worktree = read(path)
+
+    expect(worktree).toEqual(expect.objectContaining({
+      name: 'worktree-wildcard',
+      path,
+      manifest: {
+        name: 'worktree-wildcard',
+        workspaces: ['packages/*'],
+      },
+      level: 0,
+      parent: null,
+      children: expect.arrayContaining([
+        expect.objectContaining({ name: 'lib-a', level: 1, parent: worktree }),
+        expect.objectContaining({ name: 'lib-b', level: 1, parent: worktree }),
+      ]),
+    }))
+
+    expect(worktree.children).toHaveLength(2)
+  })
+
+  it('reads worktree with deep nesting', () => {
+    const path = join(__dirname, 'fixtures', 'worktree-deep')
+
+    const worktree = read(path)
+
+    expect(worktree).toMatchObject({
+      children: expect.any(Array),
+    })
+
+    const nested = worktree.children[0]
+
+    expect(worktree).toEqual({
+      name: 'worktree-deep',
+      path,
+      manifest: {
+        name: 'worktree-deep',
+        workspaces: ['nested'],
+      },
+      level: 0,
+      parent: null,
+      children: [{
+        name: 'nested',
+        path: join(path, 'nested'),
+        manifest: {
+          name: 'nested',
+          workspaces: ['packages/*'],
+        },
+        level: 1,
+        parent: worktree,
+        children: expect.arrayContaining([
+          expect.objectContaining({ name: 'deep-1', level: 2, parent: nested }),
+          expect.objectContaining({ name: 'deep-2', level: 2, parent: nested }),
+        ]),
+      }],
+    })
+
+    expect(nested.children).toHaveLength(2)
   })
 })

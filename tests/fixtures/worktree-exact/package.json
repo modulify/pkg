@@ -1,5 +1,5 @@
 {
-  "name": "project1",
+  "name": "worktree-exact",
   "workspaces": [
     "workspace-a",
     "workspace-b"

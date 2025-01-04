@@ -1,0 +1,6 @@
+{
+  "name": "worktree-wildcard",
+  "workspaces": [
+    "packages/*"
+  ]
+}

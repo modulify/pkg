@@ -1,0 +1,6 @@
+{
+  "name": "worktree-deep",
+  "workspaces": [
+    "nested"
+  ]
+}
