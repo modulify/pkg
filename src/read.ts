@@ -38,7 +38,7 @@ export function readNested (
 ) {
   const pattern = join(parent.path, workspace)
 
-  sync(pattern).forEach(path => {
+  sync(pattern).sort().forEach(path => {
     try {
       const node = readWorkspace(path, parent, level)
       if (parent) {

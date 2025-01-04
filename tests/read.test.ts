@@ -39,13 +39,11 @@ describe('read.ts', () => {
       },
       level: 0,
       parent: null,
-      children: expect.arrayContaining([
+      children: [
         expect.objectContaining({ name: 'lib-a', level: 1, parent: worktree }),
         expect.objectContaining({ name: 'lib-b', level: 1, parent: worktree }),
-      ]),
+      ],
     }))
-
-    expect(worktree.children).toHaveLength(2)
   })
 
   it('reads worktree with deep nesting', () => {
@@ -77,13 +75,11 @@ describe('read.ts', () => {
         },
         level: 1,
         parent: worktree,
-        children: expect.arrayContaining([
+        children: [
           expect.objectContaining({ name: 'deep-1', level: 2, parent: nested }),
           expect.objectContaining({ name: 'deep-2', level: 2, parent: nested }),
-        ]),
+        ],
       }],
     })
-
-    expect(nested.children).toHaveLength(2)
   })
 })
