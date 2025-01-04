@@ -1,0 +1,7 @@
+{
+  "name": "project1",
+  "workspaces": [
+    "workspace-a",
+    "workspace-b"
+  ]
+}

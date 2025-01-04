@@ -46,7 +46,8 @@
   },
   "packageManager": "yarn@4.6.0",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "test": "vitest --run"
   },
   "keywords": [
     "workspace",
