@@ -3,7 +3,7 @@
   "type": "module",
   "license": "ISC",
   "version": "0.0.0",
-  "description": "Tools for working with packages",
+  "description": "Utils for working with nodejs packages worktree",
   "author": "zaytsev.modulify@gmail.com",
   "contributors": [
     "Zaitsev Kirill <zaytsev.cmath10@gmail.com>"
@@ -47,5 +47,20 @@
   "packageManager": "yarn@4.6.0",
   "scripts": {
     "build": "vite build"
-  }
+  },
+  "keywords": [
+    "workspace",
+    "worktree",
+    "package.json",
+    "monorepo",
+    "utilities",
+    "toolkit",
+    "workspace-tool",
+    "update",
+    "read",
+    "walk",
+    "nested-packages",
+    "packages-structure",
+    "modules"
+  ]
 }
