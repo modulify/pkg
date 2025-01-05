@@ -1,6 +1,11 @@
 TARGET_HEADER=@printf '===== \033[34m%s\033[0m\n' $@
 YARN=yarn
 
+.PHONY: .yarnrc.yml
+.yarnrc.yml:  ## Generates yarn configuration
+	$(TARGET_HEADER)
+	cp .yarnrc.dist.yml .yarnrc.yml
+
 .PHONY: pnp
 pnp: package.json yarn.lock ## Installs dependencies
 	$(TARGET_HEADER)
