@@ -25,6 +25,20 @@
       "default": "./dist/*.mjs"
     }
   },
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "read": [
+        "./dist/read.d.ts"
+      ],
+      "update": [
+        "./dist/update.d.ts"
+      ],
+      "walk": [
+        "./dist/walk.d.ts"
+      ]
+    }
+  },
   "files": [
     "dist",
     "types",
