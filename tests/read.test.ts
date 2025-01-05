@@ -82,4 +82,26 @@ describe('read.ts', () => {
       }],
     })
   })
+
+  it('reads worktree where workspaces does not contain manifest', () => {
+    const path = join(__dirname, 'fixtures', 'worktree-incomplete')
+
+    const worktree = read(path)
+
+    expect(worktree).toEqual(expect.objectContaining({
+      name: 'worktree-incomplete',
+      path,
+      manifest: {
+        name: 'worktree-incomplete',
+        workspaces: ['packages/*'],
+      },
+      level: 0,
+      parent: null,
+      children: [],
+    }))
+  })
+
+  it('fails on worktree where workspaces contain broken manifests', () => {
+    expect(() => read(join(__dirname, 'fixtures', 'worktree-invalid'))).toThrowError()
+  })
 })

@@ -1,0 +1,6 @@
+{
+  "name": "worktree-invalid",
+  "workspaces": [
+    "packages/*"
+  ]
+}

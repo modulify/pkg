@@ -9,7 +9,7 @@ import { sync } from 'glob'
 export function read (path: string) {
   const root = readWorkspace(path, null, 0)
 
-  root.manifest.workspaces?.forEach(w => readNested(root, w, 1))
+  root.manifest.workspaces?.forEach(w => readNested(root, w))
 
   return root
 }
