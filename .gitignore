@@ -1,4 +1,5 @@
 .idea
+.npmrc
 !.yarn
 .yarn/*
 !.yarn/patches
