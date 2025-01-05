@@ -13,4 +13,6 @@ export default defineConfig({
       '~types': join(__dirname, './types/'),
     },
   },
+
+  cacheDir: join(__dirname, './cache/vite/'),
 })
