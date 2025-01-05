@@ -1,5 +1,6 @@
 # @modulify/pkg
 
+[![codecov](https://codecov.io/gh/modulify/pkg/branch/main/graph/badge.svg)](https://codecov.io/gh/modulify/pkg)
 [![Tests Status](https://github.com/modulify/pkg/actions/workflows/tests.yml/badge.svg)](https://github.com/modulify/pkg/actions)
 
 **@modulify/pkg** is a utility library for working with Node.js package worktrees. It provides functions to read, update, and traverse multiple package manifests, making it easier to interact with monorepos and workspace-like structures.

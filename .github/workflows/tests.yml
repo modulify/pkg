@@ -39,9 +39,9 @@ jobs:
       run: |
         yarn install
 
-    - name: Run lint
+    - name: Run eslint
       run: |
-        yarn lint
+        yarn eslint
 
   tests:
     needs: eslint
