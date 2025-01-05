@@ -1,4 +1,4 @@
-# @modulify/pkg
+# <img src="./logo.png" alt="Logo" height="36" /> @modulify/pkg
 
 [![codecov](https://codecov.io/gh/modulify/pkg/branch/main/graph/badge.svg)](https://codecov.io/gh/modulify/pkg)
 [![Tests Status](https://github.com/modulify/pkg/actions/workflows/tests.yml/badge.svg)](https://github.com/modulify/pkg/actions)
