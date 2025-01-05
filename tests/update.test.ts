@@ -45,7 +45,7 @@ describe('update.ts', () => {
       description: 'Updated description',
     })).toBe(__manifest)
 
-    expect(fs.readFileSync(__manifest, 'utf8')).toBe(`{\n  "name": "original",\n  "version": "1.1.0",\n  "description": "Updated description"\n}\n`)
+    expect(fs.readFileSync(__manifest, 'utf8')).toBe('{\n  "name": "original",\n  "version": "1.1.0",\n  "description": "Updated description"\n}\n')
   })
 
   it('updates manifest (tab = 4 dots)', () => {
@@ -58,7 +58,7 @@ describe('update.ts', () => {
       description: 'Updated description',
     })).toBe(__manifest)
 
-    expect(fs.readFileSync(__manifest, 'utf8')).toBe(`{\n    "name": "original",\n    "version": "1.1.0",\n    "description": "Updated description"\n}\n`)
+    expect(fs.readFileSync(__manifest, 'utf8')).toBe('{\n    "name": "original",\n    "version": "1.1.0",\n    "description": "Updated description"\n}\n')
   })
 
   it('does not update manifest for dry runs', () => {
@@ -82,11 +82,11 @@ describe('update.ts', () => {
 test('stringify', () => {
   expect(stringify({
     name: 'test',
-    version: '1.1.0'
-  }, 2, '\n')).toBe(`{\n  "name": "test",\n  "version": "1.1.0"\n}\n`)
+    version: '1.1.0',
+  }, 2, '\n')).toBe('{\n  "name": "test",\n  "version": "1.1.0"\n}\n')
 
   expect(stringify({
     name: 'test',
-    version: '1.1.0'
-  }, 4, '\r\n')).toBe(`{\r\n    "name": "test",\r\n    "version": "1.1.0"\r\n}\r\n`)
+    version: '1.1.0',
+  }, 4, '\r\n')).toBe('{\r\n    "name": "test",\r\n    "version": "1.1.0"\r\n}\r\n')
 })

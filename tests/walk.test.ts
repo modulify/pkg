@@ -19,14 +19,14 @@ describe('walk.ts', () => {
         manifest: { name: 'child1' },
         level: 1,
         parent: null,
-        children: []
+        children: [],
       }, {
         name: 'child2',
         path: 'root/child2',
         manifest: { name: 'child2' },
         level: 1,
         parent: null,
-        children: []
+        children: [],
       }],
       level: 0,
       parent: null,
