@@ -1,8 +1,12 @@
 # <img src="./logo.png" alt="Logo" height="36" /> @modulify/pkg
 
+Worktrees traverse, read & update util
+
 [![npm version](https://img.shields.io/npm/v/@modulify/pkg.svg)](https://www.npmjs.com/package/@modulify/pkg)
-[![codecov](https://codecov.io/gh/modulify/pkg/branch/main/graph/badge.svg)](https://codecov.io/gh/modulify/pkg)
 [![Tests Status](https://github.com/modulify/pkg/actions/workflows/tests.yml/badge.svg)](https://github.com/modulify/pkg/actions)
+[![codecov](https://codecov.io/gh/modulify/pkg/branch/main/graph/badge.svg)](https://codecov.io/gh/modulify/pkg)
+
+## Description
 
 **@modulify/pkg** is a utility library for working with Node.js package worktrees. It provides functions to read, update, and traverse multiple package manifests, making it easier to interact with monorepos and workspace-like structures.
 
